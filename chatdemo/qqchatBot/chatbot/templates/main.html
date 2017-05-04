@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+
+<title>聊天机器人</title>
+</head>
+
+<body>
+
+<form action="upload" method="post" enctype="multipart/form-data">
+<input type="file" name="file" />文件名格式：xxx.corpus.json<br />
+<br />
+<input type="submit" value="上传" />
+</form>
+<br />
+<form action="train" method="post" enctype="multipart/form-data">
+<input type="submit" value="训练" />
+</form>
+<br />
+
+<div id="a" style="display:none;"><img id="aa" alt="二维码" /></div><br>
+    <button onclick="showChild()">展示二维码</button>
+<script>
+function showChild() {
+    var ul1 = document.getElementById("a");
+    if (ul1.style.display == "block") {
+        ul1.style.display = "none";
+    } else {
+        ul1.style.display = "block";
+    }
+    var image = document.getElementById('aa');
+    var tmpUrl = "http://222.186.138.177:8189/qqbot/qrcode?="+Math.random();
+    image.setAttribute('src',tmpUrl);
+}
+</script>
+</body>
+</html>
